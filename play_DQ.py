@@ -61,8 +61,7 @@ def main():
                   device=args.device).to(args.device)
     rewards_max = float('-inf')
     model_max = None
-    #model_path = './checkpoints/DeepQ_lr_1e-05_batch_128_downsample_2_skipframe_4_best.pth.tar'
-    model_path = './checkpoints/DeepQ_lr_0.0001_batch_128_downsample_2_skipframe_4_0.pth.tar'
+    model_path = './checkpoints/DeepQ_lr_1e-05_batch_128_downsample_2_skipframe_4_best.pth.tar'
 
     comment = f'lr_{args.lr}_batch_{args.batch_size}' \
               f'_downsample_{args.downsample}_skipframe_{args.skip_frame_cnt}'
@@ -72,11 +71,5 @@ def main():
     rewards_val_epoch, steps_val = validate(0, env, n_games=10)
     print("validation done.....")
 
-# import matplotlib.pyplot as plt
-# state_t[0].requires_grad,state_t[1].requires_grad = True, True
-# loss = criterion(state_t, action_t, reward_t, state_next_t)
-# optimizer.zero_grad()
-# loss.backward()
-# plt.imshow(torch.norm(s[1].grad, dim =0, keepdim=True))
 if __name__ == '__main__':
     main()
