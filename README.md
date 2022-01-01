@@ -18,7 +18,7 @@ To train the model, run:
 python main_DQ.py
 ```
 
-The training hyperparameters are stored in ./config/config_DeepQ.yaml
+The training hyperparameters are stored in ./configs/config_DeepQ.yaml
 
 # Run Pretrained Model
 A pretrained RL agent model in available in ./checkpoints. To play mario with this model, run:
