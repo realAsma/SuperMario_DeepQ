@@ -1,0 +1,6 @@
+numpy
+pyyaml
+nes-py
+gym-super-mario-bros
+tensorboard
+
