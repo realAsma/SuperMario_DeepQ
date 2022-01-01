@@ -1,0 +1,52 @@
+Directory:
+  saveloc: './checkpoints/'
+  LoadBest: True
+  BestModelPath: './checkpoints/DeepQ_lr_1e-05_batch_128_downsample_2_skipframe_4_best.pth.tar'
+
+Train:
+  batch_size: 128
+  lr: 0.00001
+  weight_decay: 0.00001
+
+  epochs: 1000
+  epoch_start: 801
+  #steps: [6, 8]
+  warmup: 2
+  #momentum: 0.9`
+  save_every: 5
+  clip_grad: 0.01
+  print_every: 16
+  noreward_sample: 0.1
+  posreward_sample: 0.9
+  negreward_sample: 0.5
+
+  update_target_every: 8192
+  detect_anomaly: True
+
+  reward_neg_weight: 1
+  reward_pos_weight: 1
+
+  class_weight: [1, 1, 1, 1, 0.7, 1, 1]
+  sample_uni: True
+
+network:
+  model: 'DeepQ'
+  model_comp: 'Conv'
+  replay_buffer_size: 100000
+  epsilon: 0.99
+  gamma: 0.99
+  beta_entropy_final: 0.005
+  beta_entropy_initial: 0.1
+  min_epsilon: 0.1
+
+  step_thres: 400
+  skip_frame_cnt: 4
+  die_mult: 4
+  downsample: 2
+  image_size: 15360 #5240*21056/(downsample^2)
+  action_len: 7
+  info_len: 3
+
+env:
+  render: True
+
